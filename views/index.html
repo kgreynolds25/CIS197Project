@@ -1,0 +1,46 @@
+<html>
+  <head>
+    <title>Pennmo</title>
+    <script src="/static/scripts/lib/jquery.min.js"></script>
+    <script src="/static/scripts/main.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/styles/styles.css"/>
+  </head>
+  <body>
+    <div class="nav">
+      <h2>Pennmo</h2>
+      <% if (user) { %>
+      <p>Hi <%= user %> | Money in Account: <%= money %> |
+      <a href="/account/logout">Log out</a>
+      </p>
+      <% } %>
+    </div>
+    <div class="main-body">
+      <div class="left-col">
+      <% if (user) { %>
+      <a href="#" class="btn" id="new-payment">Make Payment</a>
+      <div class="modal" style="display:none">
+        <div class="payment-area">
+          Add Amount:
+          <textarea type="text" id="payment-amount"></textarea> <br>
+          Add Receiver:
+          <textarea type="text" id="payment-receiver"></textarea>
+          <a class="btn" type="submit" id="submit-payment">Submit Payment</a>
+          <a class="btn" id="close">Close</a>
+        </div>
+      </div>
+      <% } else { %>
+      <a class="btn" href="/account/signup">New User? Signup!</a>
+      <a class="btn" href="/account/login">Login</a>
+      <% } %>
+      <ul id="payments">
+        <% if (typeof payments == 'object') { %>
+          <% payments.forEach(function(p) { %>
+          <li data-qid=<%= p.id %>> <%= p.author %> paid <%= p.receiver %></li>
+          <% })
+        } %>
+      </ul>
+      </div>
+      </div>
+    </div>
+  </body>
+</html>
