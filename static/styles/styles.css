@@ -25,7 +25,7 @@ body {
   padding-top: 20px;
   padding-bottom: 20px;
   color: #FFF;
-  background-color: #F79E21;
+  background-color: #FD98A2;
   display: inline-block;
   cursor: pointer;
   text-align: center;
@@ -54,7 +54,7 @@ li {
 }
 
 li:hover {
-  background-color: #F79E21;
+  background-color: #21F79E;
   color: #FFF;
   cursor: pointer;
 }
