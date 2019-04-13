@@ -28,11 +28,19 @@ app.use(cookieSession({
 app.get('/', function (req, res, next) {
   Payment.find({}, function (err, result) {
     if (err) next(err)
-    res.render('index', {
-      payments: result,
-      user: req.session.user.username,
-      money: req.session.user.money
-    })
+    if (req.session.user) {
+      res.render('index', {
+        payments: result,
+        user: req.session.user.username,
+        money: req.session.user.money
+      })
+    } else {
+      res.render('index', {
+        payments: result,
+        user: req.session.user,
+        money: req.session.user
+      })
+    }
   })
 });
 
