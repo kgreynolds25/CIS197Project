@@ -1,7 +1,7 @@
-var mongoose = require('mongoose')
+const mongoose = require('mongoose')
 
 const paymentSchema = new mongoose.Schema({
-  paymentAmount: { type: String},
+  paymentAmount: { type: Number },
   author: { type: String },
   receiver: { type: String }
 })
