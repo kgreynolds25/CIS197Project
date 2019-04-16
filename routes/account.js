@@ -36,10 +36,5 @@ router.get('/logout', function (req, res) {
   req.session.user = '';
   res.redirect('/')
 })
-/*
-router.get('/logout', isAuthenticated, function (req, res) {
-  req.session.user = '';
-  res.redirect('/')
-})*/
 
 module.exports = router;
