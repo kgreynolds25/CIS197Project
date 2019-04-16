@@ -1,13 +1,13 @@
-var express = require('express');
-var path = require('path');
-var bodyParser = require('body-parser');
-var cookieSession = require('cookie-session');
-var mongoose = require('mongoose');
-var isAuthenticated = require('./middlewares/isAuthenticated.js');
-var Payment = require('./models/payment.js');
-var accountRouter = require('./routes/account.js');
-var apiRouter = require('./routes/api.js');
-var app = express();
+const express = require('express');
+const path = require('path');
+const bodyParser = require('body-parser');
+const cookieSession = require('cookie-session');
+const mongoose = require('mongoose');
+const isAuthenticated = require('./middlewares/isAuthenticated.js');
+const Payment = require('./models/payment.js');
+const accountRouter = require('./routes/account.js');
+const apiRouter = require('./routes/api.js');
+const app = express();
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/hw5-new')
 
 app.engine('html', require('ejs').__express);
