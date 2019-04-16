@@ -1,4 +1,4 @@
-var isAuthenticated = function (req, res, next) {
+const isAuthenticated = function (req, res, next) {
   if (req.session.user && req.session.user.length > 0) {
     next()
   } else {
