@@ -1,10 +1,10 @@
 $(document).ready(function () {
 
-  var data = [];
-  var activeIdx = -1;
+  const data = [];
+  const activeIdx = -1;
 
   getPayments();
-  setInterval(getPayments(), 2500);
+  setInterval(getPayments, 2500);
 
   function getPayments() {
     $.ajax({
@@ -26,7 +26,7 @@ $(document).ready(function () {
 
   function renderActive() {
     if (activeIdx > -1) {
-      var active = data[activeIdx];
+      const active = data[activeIdx];
       $('#show-payment').css('display', 'block');
       $('#payment').text(active.paymentAmount ? active.paymentAmount: '');
       $('#author').text(active.author ? active.author: '');
@@ -37,7 +37,7 @@ $(document).ready(function () {
   }
 
   $('#payments').on('click', 'li', function () {
-    var _id = $(this).data('qid');
+    const _id = $(this).data('qid');
     for (let i = 0; i < data.length; i++) {
       if (data[i]._id === _id) {
         activeIdx = i;
@@ -64,6 +64,27 @@ $(document).ready(function () {
       success: function(res) {
         console.log(res)
         $('.modal').css('display', 'none')
+      }
+    })
+  })
+
+  $('#add-money').on('click', function () {
+    $('.modal2').css('display', 'block');
+  })
+
+  $('#close2').on('click', function () {
+    $('.modal2').css('display', 'none');
+  })
+
+  $('#submit-addition').on('click', function () {
+    const moneyAdded = $('#money-added').val();
+    $.ajax({
+      url: '/api/addMoney',
+      data: { moneyAdded },
+      type: 'POST',
+      success: function(res) {
+        console.log(res)
+        $('.modal2').css('display', 'none')
       }
     })
   })
