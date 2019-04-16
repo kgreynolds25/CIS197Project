@@ -20,10 +20,10 @@
       <a href="#" class="btn" id="new-payment">Make Payment</a>
       <div class="modal" style="display:none">
         <div class="payment-area">
-          Add Amount:
-          <textarea type="text" id="payment-amount"></textarea> <br>
-          Add Receiver:
-          <textarea type="text" id="payment-receiver"></textarea>
+          Add Amount: <br>
+          <input type="number" id="payment-amount"></input> <br>
+          Add Receiver: <br>
+          <input type="text" id="payment-receiver"></input>
           <a class="btn" type="submit" id="submit-payment">Submit Payment</a>
           <a class="btn" id="close">Close</a>
         </div>
@@ -40,6 +40,18 @@
         } %>
       </ul>
       </div>
+      <div class ="right-col">
+        <% if (user) { %>
+        <a href="#" class="btn" id="add-money">Add Money</a>
+        <div class="modal2" style="display:none">
+          <div class="addition-area">
+            Add Amount: <br>
+            <input type="number" id="money-added"></input> <br>
+            <a class="btn" type="submit" id="submit-addition">Submit Amount</a>
+            <a class="btn" id="close2">Close</a>
+          </div>
+        </div>
+        <% } %>
       </div>
     </div>
   </body>
