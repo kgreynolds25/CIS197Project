@@ -54,6 +54,10 @@ app.post('/', isAuthenticated, function (req, res, next) {
   })
 })
 
+app.get('/menus', function (req, res, next) {
+  res.render('menus');
+})
+
 app.use('/account', accountRouter)
 
 app.use('/api', apiRouter)
