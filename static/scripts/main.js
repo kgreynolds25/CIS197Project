@@ -30,7 +30,6 @@ $(document).ready(function () {
       $('#show-payment').css('display', 'block');
       $('#payment').text(active.paymentAmount ? active.paymentAmount: '');
       $('#author').text(active.author ? active.author: '');
-      //$('#answer-text').text(active.answer ? active.answer : '');
     } else {
       $('#show-payment').css('display', 'none');
     }
