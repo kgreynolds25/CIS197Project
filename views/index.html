@@ -29,7 +29,7 @@
         </div>
       </div>
       <% } else { %>
-      <a class="btn" href="/account/signup">New User? Signup!</a>
+      <a class="btn" href="/account/signup">New User? Signup!</a> <br> <br>
       <a class="btn" href="/account/login">Login</a>
       <% } %>
       <ul id="payments">
@@ -42,17 +42,19 @@
       </div>
       <div class ="right-col">
         <% if (user) { %>
-        <a href="#" class="btn" id="add-money">Add Money</a>
+        <a href="#" class="btn" id="add-money">Add Money</a> <br>
         <div class="modal2" style="display:none">
           <div class="addition-area">
             Add Amount: <br>
-            <input type="number" id="money-added"></input> <br>
+            <input type="number" id="money-added"></input> <br> <br>
             <a class="btn" type="submit" id="submit-addition">Submit Amount</a>
             <a class="btn" id="close2">Close</a>
           </div>
         </div>
         <% } %>
+        <a class="btn" href="/menus"> Dining Options </a>
       </div>
     </div>
   </body>
 </html>
+
