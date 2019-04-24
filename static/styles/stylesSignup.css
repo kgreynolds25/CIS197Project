@@ -1,0 +1,33 @@
+body {
+  font-family: 'Perpetua';
+  margin: 0px;
+  color: #990000;
+  font-size: 25px;
+}
+
+h1 {
+  color: #011F5B;
+}
+
+input {
+  margin: auto;
+  width: 40%;
+  font-size: 20px;
+  style: block;
+  text-align: center;
+  align: center;
+}
+
+button {
+  text-decoration: none;
+  width: 40%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: #FFF;
+  background-color: #011F5B;
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+  font-size: 25px;
+  align: center;
+}

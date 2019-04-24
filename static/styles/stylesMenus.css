@@ -1,0 +1,33 @@
+body {
+  font-family: 'Perpetua';
+  margin: 0px;
+  color: #990000;
+  font-size: 25px;
+}
+
+h1 {
+  color: #011F5B;
+}
+
+.main-body {
+  style: block;
+  align: center;
+  font-size: 25px;
+  text-align: center;
+}
+
+.main-body > ul {
+  list-style-type: none;
+  color: #990000;
+}
+
+.main-body > a {
+  text-decoration: none;
+  width: 40%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: #FFF;
+  background-color: #011F5B;
+  display: inline-block;
+  cursor: pointer;
+}
