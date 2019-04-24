@@ -14,7 +14,7 @@ router.post('/addPayment', function (req, res, next) {
   const { paymentAmount, receiver } = req.body;
   const author = req.session.user.username;
   const money = req.session.user.money;
-  if (money >= paymentAmount) {
+  if (money >= paymentAmount && paymentAmount >= 0) {
     User.findOne({ username: author }, function (err, u) {
       if (err) return next(err);
       u.money = Number(money) - Number(paymentAmount);
