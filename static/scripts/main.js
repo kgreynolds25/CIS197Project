@@ -12,7 +12,6 @@ $(document).ready(function () {
       success: function (res) {
         data = res
         renderPreviews()
-        renderActive()
       }
     })
   }
@@ -23,27 +22,6 @@ $(document).ready(function () {
         + '</li>').join('')
     )
   }
-
-  function renderActive() {
-    if (activeIdx > -1) {
-      const active = data[activeIdx];
-      $('#show-payment').css('display', 'block');
-      $('#payment').text(active.paymentAmount ? active.paymentAmount: '');
-      $('#author').text(active.author ? active.author: '');
-    } else {
-      $('#show-payment').css('display', 'none');
-    }
-  }
-
-  $('#payments').on('click', 'li', function () {
-    const _id = $(this).data('qid');
-    for (let i = 0; i < data.length; i++) {
-      if (data[i]._id === _id) {
-        activeIdx = i;
-      }
-    }
-    renderActive();
-  })
 
   $('#new-payment').on('click', function () {
     $('.modal').css('display', 'block');
